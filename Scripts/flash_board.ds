@@ -1,0 +1,4 @@
+flash load "MSFTimer/Debug/MSFTimer.axf"
+handle RESET stop
+reset reset.system
+set semihosting enabled off
