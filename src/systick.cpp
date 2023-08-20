@@ -14,14 +14,15 @@
 /*!
  * Holds MSF sampler the state machine state
  */
-volatile static enum MSF_SAMPLER_STATE {
+enum MSF_SAMPLER_STATE {
 	MSF_IDLE,               /*!< Pauses the sampling */
 	MSF_START,              /*!< Starts sampling */
     MSF_ZSEC_WAIT_FOR_LOW,  /*!< Waiting for the 0s low period to start */
 	MSF_ZSEC_LOW_PERIOD,    /*!< Whilst in a potential 0s low period */
 	MSF_ZSEC_HIGH_PERIOD,   /*!< Whilst in a potential 0s high period */
 	MSF_SEC_SAMPLING        /*!< Sampling data bits */
-} msfSampleState = MSF_IDLE;
+};
+volatile static enum MSF_SAMPLER_STATE msfSampleState = MSF_IDLE;
 /*!
  * The MSF sample buffer
  */
